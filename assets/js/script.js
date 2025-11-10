@@ -1,20 +1,16 @@
-// === 1️⃣ Crée la structure HTML ===
 construireCompteur();
 
-// === 2️⃣ Fonction pour charger les dates depuis un JSON ===
 let vacancesGlobales = [];
 
 function chargerVacances(fichierJson, callback) {
   fetch(fichierJson)
     .then((response) => response.json())
     .then((data) => {
-      // Convertit les dates en objets Date
       vacancesGlobales = data.map((vac) => ({
         nom: vac.nom,
         date: new Date(vac.date),
       }));
 
-      // Appelle le callback après chargement pour démarrer le compteur
       if (callback) callback(vacancesGlobales);
     })
     .catch((error) =>
@@ -22,7 +18,6 @@ function chargerVacances(fichierJson, callback) {
     );
 }
 
-// === 3️⃣ Fonction de mise à jour du compteur ===
 function mettreAJourCompteur(vacances) {
   const maintenant = new Date();
 
@@ -57,7 +52,6 @@ function mettreAJourCompteur(vacances) {
     "Plus de vacances prévues 😢";
 }
 
-// === 4️⃣ Fonction qui construit la structure HTML du compteur ===
 function construireCompteur() {
   const container = document.createElement("div");
   container.classList.add("container");
@@ -93,7 +87,7 @@ function construireCompteur() {
 }
 
 const params = new URLSearchParams(window.location.search);
-const canton = params.get("canton"); // ex: 'GE'
+const canton = params.get("canton");
 
 const fichierChoisi = "assets/json/" + canton + ".json";
 

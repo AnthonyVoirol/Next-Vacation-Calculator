@@ -1,206 +1,221 @@
 /* Styles généraux */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Cercle en haut à gauche */
 .circle {
-    position: absolute;
-    top: -120px;
-    left: -120px;
-    width: 300px;
-    height: 300px;
-    background-color: #ffc44f;
-    border-radius: 50%;
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 300px;
+  height: 300px;
+  background-color: #ffc44f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exitApp {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.exitApp:hover {
+  text-decoration: underline;
+  color: rgb(54, 54, 54);
 }
 
 @media (max-width: 600px) {
-    .circle {
-        display: none;
-    }
+  .circle {
+    display: none;
+  }
 }
 
 /* Cercle en bas à gauche */
 .blue-circle {
-    position: absolute;
-    bottom: -50px;
-    left: -80px;
-    width: 200px;
-    height: 200px;
-    background-color: #4fc1f6;
-    border-radius: 50%;
-    transform: translateY(25%);
+  position: absolute;
+  bottom: -50px;
+  left: -80px;
+  width: 200px;
+  height: 200px;
+  background-color: #4fc1f6;
+  border-radius: 50%;
+  transform: translateY(25%);
 }
 
 @media (max-width: 600px) {
-    .blue-circle {
-        display: none;
-    }
+  .blue-circle {
+    display: none;
+  }
 }
 
 /* Bande bleue avec extrémité arrondie */
 .blue-band {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 40%; /* Ajuste la largeur */
-    height: 200px; /* Ajuste la hauteur */
-    background-color: #4fc1f6;
-    border-radius: 100px 0 0 100px; /* Arrondi à gauche */
-    transform: translateY(-50%); /* Centre verticalement */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 40%; /* Ajuste la largeur */
+  height: 200px; /* Ajuste la hauteur */
+  background-color: #4fc1f6;
+  border-radius: 100px 0 0 100px; /* Arrondi à gauche */
+  transform: translateY(-50%); /* Centre verticalement */
 }
 
 @media (max-width: 600px) {
-    .blue-band {
-        display: none; /* Masque complètement l'élément */
-    }
+  .blue-band {
+    display: none; /* Masque complètement l'élément */
+  }
 }
 
 .overlay-image {
-    position: absolute; /* Pour les écrans plus grands */
-    top: 50%; /* Positionnement pour le centre */
-    left: 50%;
-    transform: translate(80%, -50%); /* Centre l'image */
-    width: 20%; /* Ajuste la taille */
-    max-width: 400px; /* Limite la taille max */
-    z-index: 10; /* Met l'image au-dessus des autres éléments */
-    pointer-events: none; /* Empêche l’image d’interagir avec la souris */
+  position: absolute; /* Pour les écrans plus grands */
+  top: 50%; /* Positionnement pour le centre */
+  left: 50%;
+  transform: translate(80%, -50%); /* Centre l'image */
+  width: 20%; /* Ajuste la taille */
+  max-width: 400px; /* Limite la taille max */
+  z-index: 10; /* Met l'image au-dessus des autres éléments */
+  pointer-events: none; /* Empêche l’image d’interagir avec la souris */
 }
 
 .container {
-    position: absolute;
-    left: 20%;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: left;
-    max-width: 400px;
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  max-width: 400px;
 }
 
 @media (max-width: 600px) {
-    .container {
-        position: relative;
-        margin: 0 auto;
-        top: 20%;
-        left: 0;
-        transform: none;
-        text-align: center;
-        padding: 20px;
-    }
+  .container {
+    position: relative;
+    margin: 0 auto;
+    top: 20%;
+    left: 0;
+    transform: none;
+    text-align: center;
+    padding: 20px;
+  }
 
-    .overlay-image {
-        position: relative;
-        width: 80%;
-        max-width: 300px;
-        margin: 100px auto; /* Ajuste cette valeur pour l'espace */
-        display: block;
-        z-index: 1;
-        transform: none;
-        top: auto;
-        left: auto;
-    }
+  .overlay-image {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+    margin: 100px auto; /* Ajuste cette valeur pour l'espace */
+    display: block;
+    z-index: 1;
+    transform: none;
+    top: auto;
+    left: auto;
+  }
 
-    body {
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
+  body {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 .content h1 {
-    font-size: 58px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 58px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .content h2 {
-    font-size: 44px;
-    margin-top: -30px;
-    text-align: center;
+  font-size: 44px;
+  margin-top: -30px;
+  text-align: center;
 }
 
-.content p{
-    font-size: 20px;
-    text-align: center;
+.content p {
+  font-size: 20px;
+  text-align: center;
 }
 
 .download-section {
-    display: flex;
-    align-items: center; /* Aligner verticalement */
-    margin-top: 40px;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center; /* Aligner verticalement */
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacement entre les boutons */
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacement entre les boutons */
+  align-items: center;
 }
 
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    width: 250px; /* Largeur fixe des boutons */
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  width: 250px; /* Largeur fixe des boutons */
 }
 
 .android {
-    background-color: black;
+  background-color: black;
 }
 
-.android:hover{
-    transform: scale(1.05);
+.android:hover {
+  transform: scale(1.05);
 }
 
 .ios {
-    background-color: black;
+  background-color: black;
 }
 
-.ios:hover{
-    transform: scale(1.05);
+.ios:hover {
+  transform: scale(1.05);
 }
 
 .qr-code img {
-    width: 100px;
-    height: auto;
+  width: 100px;
+  height: auto;
 }
 
 /* Adaptation pour les petits écrans */
 @media (max-width: 600px) {
-    .download-section {
-        flex-direction: column;
-        align-items: center;
-    }
+  .download-section {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .qr-code {
-        margin-top: 15px;
-    }
+  .qr-code {
+    margin-top: 15px;
+  }
 }
 
 .content-wrapper {
-    flex-grow: 1; /* Prend toute la hauteur disponible */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centre horizontalement */
-    justify-content: center; /* Centre verticalement */
+  flex-grow: 1; /* Prend toute la hauteur disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement */
+  justify-content: center; /* Centre verticalement */
 }

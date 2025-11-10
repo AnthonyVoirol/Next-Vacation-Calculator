@@ -1,215 +1,129 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
 }
 
-html, body{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+/* Boutons fixes en haut */
+.returnMap {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  background-color: #e9ecef;
+  color: #495057;
+  z-index: 10;
 }
 
-.container {
-    flex: 1;
-    margin-top: 20vh;
-    padding: 20px;
-}
-
-h1 {
-    color: white;
-    background-color: #333;
-    border: 2px solid white;
-    font-size: 40px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-}
-
-.box {
-    background-color: #f0f0f0;
-    padding: 20px;
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#compteur {
-    font-size: 30px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-#vacance {
-    font-size: 32px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-.toggle-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.footer {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: gray;
-}
-
-input[type="text"],
-input[type="date"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    max-width: 300px; 
-}
-
-@media (min-width: 768px) {
-    .add-vacances {
-        flex-direction: row; 
-        justify-content: center; 
-    }
-    input[type="text"],
-    input[type="date"] {
-        width: auto; 
-    }
-}
-
-#ajouterVacance {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.15s ease-in-out;
-}
-
-#ajouterVacance:hover {
-    background: linear-gradient(135deg, #0056b3, #003f7f);
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-#resetVacances {
-    margin-top: 30px;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.15s ease-in-out;
-}
-
-#resetVacances:hover{
-    background: linear-gradient(135deg, #0056b3, #003f7f);
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.add-vacances {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: auto;
-}
-
-.vacance {
-    display: flex; 
-    align-items: center;
-    margin: 10px 0;
-}
-
-label {
-    margin-right: 10px;
-    font-weight: bold;
+.returnMap:hover {
+  background-color: #dee2e6;
 }
 
 .download-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  background-color: #3498db;
+  color: white;
+  z-index: 10;
 }
 
 .download-button:hover {
-    background: linear-gradient(135deg, #0056b3, #003f7f);
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: #2980b9;
 }
 
-.fullscreen-button {
-    position: absolute;
-    top: 38%;
-    right: 34%;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: inherit;
-    z-index: 10;
-    transition: transform 0.3s ease;
-    color: black;
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem; /* Pour éviter que le contenu soit caché sous les boutons */
 }
 
-.fullscreen-button:hover {
-    transform: scale(1.2);
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2c3e50;
 }
 
-.box.fullscreen-mode {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+/* Box du compte à rebours */
+.box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
-.box.fullscreen-mode #vacance {
-    font-size: 100px;
-    color: white;
-    font-family: Impact, fantasy;
+#vacance {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #3498db;
 }
 
-.box.fullscreen-mode #compteur {
-    font-size: 130px;
-    color: white;
-    font-family: Impact, fantasy;
+#compteur {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .returnMap, .download-button {
+    top: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #vacance {
+    font-size: 1.3rem;
+  }
+
+  #compteur {
+    font-size: 1.6rem;
+  }
+
+  .box {
+    padding: 1.5rem;
+  }
 }
