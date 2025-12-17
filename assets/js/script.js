@@ -63,11 +63,11 @@ function construireCompteur() {
   box.classList.add("box");
   box.id = "countdownBox";
 
-  /*const fullscreenBtn = document.createElement("button");
+  const fullscreenBtn = document.createElement("button");
   fullscreenBtn.id = "fullscreenBtn";
   fullscreenBtn.classList.add("fullscreen-button");
   fullscreenBtn.title = "Mode plein écran";
-  fullscreenBtn.textContent = "⛶";*/
+  fullscreenBtn.textContent = "⛶";
 
   const vacance = document.createElement("p");
   vacance.id = "vacance";
@@ -76,7 +76,7 @@ function construireCompteur() {
   const compteur = document.createElement("p");
   compteur.id = "compteur";
 
-  //box.appendChild(fullscreenBtn);
+  box.appendChild(fullscreenBtn);
   box.appendChild(vacance);
   box.appendChild(compteur);
 
@@ -89,9 +89,11 @@ function construireCompteur() {
 const params = new URLSearchParams(window.location.search);
 const canton = params.get("canton");
 
-const fichierChoisi = "assets/json/" + canton + ".json";
+if (!canton) {
+  window.location.href = "/";
+}
 
-console.log(fichierChoisi);
+const fichierChoisi = "assets/json/" + canton + ".json";
 
 chargerVacances(fichierChoisi, (vacances) => {
   mettreAJourCompteur(vacances);
