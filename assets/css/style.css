@@ -1,9 +1,8 @@
-/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -18,7 +17,6 @@ body {
   position: relative;
 }
 
-/* Boutons fixes en haut */
 .returnMap {
   position: fixed;
   top: 1.5rem;
@@ -55,14 +53,13 @@ body {
   background-color: #2980b9;
 }
 
-/* Container principal */
 .container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
   padding: 2rem;
-  margin-top: 4rem; /* Pour éviter que le contenu soit caché sous les boutons */
+  margin-top: 4rem;
 }
 
 h1 {
@@ -72,7 +69,6 @@ h1 {
   color: #2c3e50;
 }
 
-/* Box du compte à rebours */
 .box {
   background-color: white;
   border-radius: 12px;
@@ -94,7 +90,6 @@ h1 {
   color: #2c3e50;
 }
 
-/* Footer */
 .footer {
   margin-top: auto;
   padding: 1rem;
@@ -103,9 +98,9 @@ h1 {
   font-size: 0.9rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .returnMap, .download-button {
+  .returnMap,
+  .download-button {
     top: 1rem;
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
@@ -125,5 +120,193 @@ h1 {
 
   .box {
     padding: 1.5rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.returnMap {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  background-color: #e9ecef;
+  color: #495057;
+  z-index: 10;
+}
+
+.returnMap:hover {
+  background-color: #dee2e6;
+}
+
+.download-button {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  background-color: #3498db;
+  color: white;
+  z-index: 10;
+}
+
+.download-button:hover {
+  background-color: #2980b9;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#vacance {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #3498db;
+}
+
+#compteur {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.fullscreen-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #2c3e50;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.fullscreen-button:hover {
+  transform: scale(1.2);
+}
+
+.box.fullscreen-mode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.box.fullscreen-mode #vacance {
+  font-size: 100px;
+  color: white;
+  font-family: Impact, fantasy;
+}
+
+.box.fullscreen-mode #compteur {
+  font-size: 130px;
+  color: white;
+  font-family: Impact, fantasy;
+}
+
+.box.fullscreen-mode .fullscreen-button {
+  color: white;
+  top: 30px;
+  right: 30px;
+  font-size: 32px;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .returnMap,
+  .download-button {
+    top: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #vacance {
+    font-size: 1.3rem;
+  }
+
+  #compteur {
+    font-size: 1.6rem;
+  }
+
+  .box {
+    padding: 1.5rem;
+  }
+
+  .box.fullscreen-mode #vacance {
+    font-size: 50px;
+  }
+
+  .box.fullscreen-mode #compteur {
+    font-size: 70px;
   }
 }

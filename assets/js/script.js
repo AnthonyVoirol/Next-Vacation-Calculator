@@ -99,3 +99,51 @@ chargerVacances(fichierChoisi, (vacances) => {
   mettreAJourCompteur(vacances);
   setInterval(() => mettreAJourCompteur(vacances), 1000);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+  const countdownBox = document.getElementById('countdownBox');
+
+  if (fullscreenBtn && countdownBox) {
+    fullscreenBtn.addEventListener('click', function() {
+      toggleFullscreen();
+    });
+  }
+
+  function toggleFullscreen() {
+    if (countdownBox.classList.contains('fullscreen-mode')) {
+      countdownBox.classList.remove('fullscreen-mode');
+      fullscreenBtn.innerHTML = '⛶';
+      fullscreenBtn.title = 'Mode plein écran';
+      
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+      else if (document.msExitFullscreen) document.msExitFullscreen();
+    } else {
+      countdownBox.classList.add('fullscreen-mode');
+      fullscreenBtn.innerHTML = '⛶';
+      
+      if (countdownBox.requestFullscreen) countdownBox.requestFullscreen();
+      else if (countdownBox.webkitRequestFullscreen) countdownBox.webkitRequestFullscreen();
+      else if (countdownBox.mozRequestFullScreen) countdownBox.mozRequestFullScreen();
+      else if (countdownBox.msRequestFullscreen) countdownBox.msRequestFullscreen();
+    }
+  }
+
+  document.addEventListener('fullscreenchange', handleFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+  document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+  document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+  function handleFullscreenChange() {
+    if (!document.fullscreenElement && 
+        !document.webkitFullscreenElement && 
+        !document.mozFullScreenElement && 
+        !document.msFullscreenElement) {
+      countdownBox.classList.remove('fullscreen-mode');
+      fullscreenBtn.innerHTML = '⛶';
+      fullscreenBtn.title = 'Mode plein écran';
+    }
+  }
+});
