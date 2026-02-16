@@ -55,8 +55,8 @@ Visitez l'application en direct : [Ajoutez votre URL de déploiement ici]
 
 1. Clonez le dépôt :
 ```bash
-git clone https://github.com/votrenom/swiss-holidays-countdown.git
-cd swiss-holidays-countdown
+git clone https://github.com/anthonyvoirol/Next-Vacation-Calculator
+cd Next-Vacation-Calculator
 ```
 
 2. Ouvrez `index.html` dans votre navigateur, ou servez-le avec un serveur local :
@@ -86,8 +86,8 @@ Les vacances de chaque canton sont stockées dans un fichier JSON avec la struct
 ```json
 [
   {
-    "nom": "Vacances de printemps",
-    "date": "2024-04-15"
+    "nom": "Pâques 2025",
+    "date": "2025-04-05T00:00:00"
   },
   {
     "nom": "Vacances d'été",
@@ -142,9 +142,7 @@ Les contributions sont les bienvenues ! N'hésitez pas à soumettre une Pull Req
 
 - [ ] Ajouter le support de la langue anglaise
 - [ ] Ajouter les traductions allemande et italienne
-- [ ] Inclure les jours fériés nationaux
 - [ ] Ajouter une fonctionnalité d'export de calendrier
-- [ ] Créer des versions d'application mobile
 - [ ] Ajouter un système de notification pour les vacances à venir
 
 ## Problèmes Connus
@@ -166,10 +164,4 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 - Carte SVG de la Suisse basée sur des données cartographiques du domaine public
 - Inspiré par le besoin des élèves et des enseignants de suivre leurs pauses bien méritées
 
-## Support
-
-Si vous rencontrez des problèmes ou avez des questions, veuillez [ouvrir une issue](https://github.com/votrenom/swiss-holidays-countdown/issues).
-
 ---
-
-Fait avec ❤️ pour les élèves et enseignants suisses
