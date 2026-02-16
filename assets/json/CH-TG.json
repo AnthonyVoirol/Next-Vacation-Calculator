@@ -1,22 +1,42 @@
 [
-  { "nom": "Volksschule 2025", "date": "2025-01-25T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-02-02T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-04-05T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-04-21T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-07-05T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-08-10T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-10-04T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-10-19T00:00:00" },
-  { "nom": "Volksschule 2025", "date": "2025-12-20T00:00:00" },
-  { "nom": "Volksschule 2026", "date": "2026-01-04T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-01-30T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-02-07T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-03-26T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-04-11T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-07-10T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-08-15T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-10-09T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-10-24T00:00:00" },
-  { "nom": "Volksschule 2027", "date": "2027-12-18T00:00:00" },
-  { "nom": "Volksschule 2028", "date": "2028-01-02T00:00:00" }
+  {
+    "nom": "Sportferien 2025",
+    "date": "2025-01-25T00:00:00"
+  },
+  {
+    "nom": "Frühlingsferien 2025",
+    "date": "2025-04-05T00:00:00"
+  },
+  {
+    "nom": "Sommerferien 2025",
+    "date": "2025-07-05T00:00:00"
+  },
+  {
+    "nom": "Herbstferien 2025",
+    "date": "2025-10-04T00:00:00"
+  },
+  {
+    "nom": "Weihnachtsferien 2025",
+    "date": "2025-12-20T00:00:00"
+  },
+  {
+    "nom": "Sportferien 2027",
+    "date": "2027-01-30T00:00:00"
+  },
+  {
+    "nom": "Frühlingsferien 2027",
+    "date": "2027-03-26T00:00:00"
+  },
+  {
+    "nom": "Sommerferien 2027",
+    "date": "2027-07-10T00:00:00"
+  },
+  {
+    "nom": "Herbstferien 2027",
+    "date": "2027-10-09T00:00:00"
+  },
+  {
+    "nom": "Weihnachtsferien 2027",
+    "date": "2027-12-18T00:00:00"
+  }
 ]
