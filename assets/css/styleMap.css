@@ -16,33 +16,141 @@ body {
   border-radius: 8px;
 }
 
-#CH-AG { fill: #a6e3a1; } /* Green */
-#CH-AI { fill: #fab387; } /* Peach */
-#CH-AR { fill: #f5c2e7; } /* Pink */
-#CH-BE { fill: #89b4fa; } /* Blue */
-#CH-BL { fill: #cba6f7; } /* Mauve */
-#CH-BS { fill: #b4befe; } /* Lavender */
-#CH-FR { fill: #94e2d5; } /* Teal */
-#CH-GE { fill: #f9e2af; } /* Yellow */
-#CH-GL { fill: #a6e3a1; } /* Green */
-#CH-GR { fill: #89b4fa; } /* Blue */
-#CH-JU { fill: #f5c2e7; } /* Pink */
-#CH-LU { fill: #89dceb; } /* Sky */
-#CH-NE { fill: #f9e2af; } /* Yellow */
-#CH-NW { fill: #fab387; } /* Peach */
-#CH-OW { fill: #eba0ac; } /* Maroon */
-#CH-SG { fill: #94e2d5; } /* Teal */
-#CH-SH { fill: #f9e2af; } /* Yellow */
-#CH-SO { fill: #a6e3a1; } /* Green */
-#CH-SZ { fill: #f5c2e7; } /* Pink */
-#CH-TG { fill: #94e2d5; } /* Teal */
-#CH-TI { fill: #fab387; } /* Peach */
-#CH-UR { fill: #cba6f7; } /* Mauve */
-#CH-VD { fill: #b4befe; } /* Lavender */
-#CH-VS { fill: #eba0ac; } /* Maroon */
-#CH-ZG { fill: #89dceb; } /* Sky */
-#CH-ZH { fill: #89b4fa; } /* Blue */
-#IT { fill: #f38ba8; } /* Red */
+#CH-AG {
+  fill: #a6e3a1;
+}
+
+/* Green */
+#CH-AI {
+  fill: #fab387;
+}
+
+/* Peach */
+#CH-AR {
+  fill: #f5c2e7;
+}
+
+/* Pink */
+#CH-BE {
+  fill: #89b4fa;
+}
+
+/* Blue */
+#CH-BL {
+  fill: #cba6f7;
+}
+
+/* Mauve */
+#CH-BS {
+  fill: #b4befe;
+}
+
+/* Lavender */
+#CH-FR {
+  fill: #94e2d5;
+}
+
+/* Teal */
+#CH-GE {
+  fill: #f9e2af;
+}
+
+/* Yellow */
+#CH-GL {
+  fill: #a6e3a1;
+}
+
+/* Green */
+#CH-GR {
+  fill: #89b4fa;
+}
+
+/* Blue */
+#CH-JU {
+  fill: #f5c2e7;
+}
+
+/* Pink */
+#CH-LU {
+  fill: #89dceb;
+}
+
+/* Sky */
+#CH-NE {
+  fill: #f9e2af;
+}
+
+/* Yellow */
+#CH-NW {
+  fill: #fab387;
+}
+
+/* Peach */
+#CH-OW {
+  fill: #eba0ac;
+}
+
+/* Maroon */
+#CH-SG {
+  fill: #94e2d5;
+}
+
+/* Teal */
+#CH-SH {
+  fill: #f9e2af;
+}
+
+/* Yellow */
+#CH-SO {
+  fill: #a6e3a1;
+}
+
+/* Green */
+#CH-SZ {
+  fill: #f5c2e7;
+}
+
+/* Pink */
+#CH-TG {
+  fill: #94e2d5;
+}
+
+/* Teal */
+#CH-TI {
+  fill: #fab387;
+}
+
+/* Peach */
+#CH-UR {
+  fill: #cba6f7;
+}
+
+/* Mauve */
+#CH-VD {
+  fill: #b4befe;
+}
+
+/* Lavender */
+#CH-VS {
+  fill: #eba0ac;
+}
+
+/* Maroon */
+#CH-ZG {
+  fill: #89dceb;
+}
+
+/* Sky */
+#CH-ZH {
+  fill: #89b4fa;
+}
+
+/* Blue */
+#IT {
+  fill: #f38ba8;
+}
+
+/* Red */
 
 #suisse path {
   stroke: #313244;
@@ -67,12 +175,47 @@ body {
   body {
     padding: 10px;
   }
-  
+
   #suisse path {
     stroke-width: 1;
   }
-  
+
   #suisse path:hover {
     stroke-width: 1.5;
+  }
+}
+
+.header-container {
+  text-align: center;
+  padding: 40px 20px 30px;
+  background-color: #f8f9fa;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 30px 15px 20px;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
   }
 }
