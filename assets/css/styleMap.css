@@ -1,221 +1,100 @@
+/* Reset et configuration de base */
 body {
   margin: 0;
-  padding: 20px;
-  background-color: #797979;
+  padding: 40px 20px;
+  background-color: #1e1e2e; /* Fond sombre moderne (Dark Theme) */
+  color: #cdd6f4; /* Texte blanc cassé pour éviter la fatigue oculaire */
   display: flex;
+  flex-direction: column; /* Important pour mettre le titre AU-DESSUS de la carte */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
-#suisse {
-  max-width: 75%;
-  height: auto;
-  border-radius: 8px;
-}
-
-#CH-AG {
-  fill: #a6e3a1;
-}
-
-/* Green */
-#CH-AI {
-  fill: #fab387;
-}
-
-/* Peach */
-#CH-AR {
-  fill: #f5c2e7;
-}
-
-/* Pink */
-#CH-BE {
-  fill: #89b4fa;
-}
-
-/* Blue */
-#CH-BL {
-  fill: #cba6f7;
-}
-
-/* Mauve */
-#CH-BS {
-  fill: #b4befe;
-}
-
-/* Lavender */
-#CH-FR {
-  fill: #94e2d5;
-}
-
-/* Teal */
-#CH-GE {
-  fill: #f9e2af;
-}
-
-/* Yellow */
-#CH-GL {
-  fill: #a6e3a1;
-}
-
-/* Green */
-#CH-GR {
-  fill: #89b4fa;
-}
-
-/* Blue */
-#CH-JU {
-  fill: #f5c2e7;
-}
-
-/* Pink */
-#CH-LU {
-  fill: #89dceb;
-}
-
-/* Sky */
-#CH-NE {
-  fill: #f9e2af;
-}
-
-/* Yellow */
-#CH-NW {
-  fill: #fab387;
-}
-
-/* Peach */
-#CH-OW {
-  fill: #eba0ac;
-}
-
-/* Maroon */
-#CH-SG {
-  fill: #94e2d5;
-}
-
-/* Teal */
-#CH-SH {
-  fill: #f9e2af;
-}
-
-/* Yellow */
-#CH-SO {
-  fill: #a6e3a1;
-}
-
-/* Green */
-#CH-SZ {
-  fill: #f5c2e7;
-}
-
-/* Pink */
-#CH-TG {
-  fill: #94e2d5;
-}
-
-/* Teal */
-#CH-TI {
-  fill: #fab387;
-}
-
-/* Peach */
-#CH-UR {
-  fill: #cba6f7;
-}
-
-/* Mauve */
-#CH-VD {
-  fill: #b4befe;
-}
-
-/* Lavender */
-#CH-VS {
-  fill: #eba0ac;
-}
-
-/* Maroon */
-#CH-ZG {
-  fill: #89dceb;
-}
-
-/* Sky */
-#CH-ZH {
-  fill: #89b4fa;
-}
-
-/* Blue */
-#IT {
-  fill: #f38ba8;
-}
-
-/* Red */
-
-#suisse path {
-  stroke: #313244;
-  stroke-width: 1.5;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-#suisse path:hover {
-  opacity: 0.85;
-  stroke: #cdd6f4;
-  stroke-width: 2;
-  filter: brightness(1.1);
-}
-
-#suisse path title {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-
-  #suisse path {
-    stroke-width: 1;
-  }
-
-  #suisse path:hover {
-    stroke-width: 1.5;
-  }
-}
-
+/* --- Design du Header --- */
 .header-container {
   text-align: center;
-  padding: 40px 20px 30px;
-  background-color: #f8f9fa;
+  margin-bottom: 3rem; /* Espace entre le titre et la carte */
+  animation: fadeIn 1s ease-out;
 }
 
 .main-title {
   font-size: 2.5rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 0 0 15px 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #6c757d;
-  margin: 0;
   font-weight: 400;
+  color: #a6adc8;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .header-container {
-    padding: 30px 15px 20px;
-  }
+/* --- Design de la Carte --- */
+#suisse {
+  max-width: 90%; /* Un peu plus grand */
+  width: 1000px;
+  height: auto;
+  /* Ombre portée pour donner du volume à la carte entière */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+}
 
+/* Styles par défaut des cantons */
+#suisse path {
+  stroke: #1e1e2e; /* Couleur du fond pour séparer les cantons proprement */
+  stroke-width: 2;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  transform-origin: center; /* Pour que le zoom se fasse depuis le centre du canton */
+}
+
+/* Effet de survol (Hover) */
+#suisse path:hover {
+  opacity: 1;
+  stroke: #ffffff; /* Bordure blanche au survol */
+  stroke-width: 3px;
+  filter: brightness(1.2); /* Éclaircit la couleur */
+  transform: translateY(-5px) scale(1.02); /* Effet de lévitation */
+  z-index: 10; /* Tente de mettre le canton au dessus (fonctionne selon l'ordre SVG) */
+}
+
+/* --- Couleurs des Cantons (Palette Pastel Catppuccin) --- */
+/* Je garde vos IDs existants mais j'harmonise si besoin */
+
+#CH-AG, #CH-GL, #CH-SO { fill: #a6e3a1; } /* Vert */
+#CH-AI, #CH-NW, #CH-TI { fill: #fab387; } /* Orange/Peche */
+#CH-AR, #CH-JU, #CH-SZ { fill: #f5c2e7; } /* Rose */
+#CH-BE, #CH-GR, #CH-ZH { fill: #89b4fa; } /* Bleu */
+#CH-BL, #CH-UR { fill: #cba6f7; } /* Mauve */
+#CH-BS, #CH-VD { fill: #b4befe; } /* Lavande */
+#CH-FR, #CH-SG, #CH-TG { fill: #94e2d5; } /* Menthe */
+#CH-GE, #CH-NE, #CH-SH { fill: #f9e2af; } /* Jaune */
+#CH-LU, #CH-ZG { fill: #89dceb; } /* Ciel */
+#CH-OW, #CH-VS { fill: #eba0ac; } /* Corail */
+#IT { fill: #313244; } /* Italie en gris foncé pour l'effacer ou #f38ba8 pour rouge */
+
+/* --- Animation d'apparition --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
   .main-title {
     font-size: 1.8rem;
   }
-
   .subtitle {
     font-size: 1rem;
+  }
+  #suisse {
+    max-width: 100%;
   }
 }
