@@ -1,100 +1,230 @@
-/* Reset et configuration de base */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for footer & inline styles compatibility */
+:root {
+  --btn-bg: #1e293b;
+  --btn-border: #334155;
+  --btn-text: #94a3b8;
+  --accent: #3b82f6;
+  --title: #f8fafc;
+  --footer-text: #64748b;
+}
+
+/* Base Configuration */
 body {
   margin: 0;
-  padding: 40px 20px;
-  background-color: #1e1e2e; /* Fond sombre moderne (Dark Theme) */
-  color: #cdd6f4; /* Texte blanc cassé pour éviter la fatigue oculaire */
+  padding: 0;
+  background-color: #0f172a;
+  color: #f8fafc;
   display: flex;
-  flex-direction: column; /* Important pour mettre le titre AU-DESSUS de la carte */
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* --- Design du Header --- */
+/* Tooltip */
+.map-tooltip {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.9);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  z-index: 1000;
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+/* Header Design */
 .header-container {
   text-align: center;
-  margin-bottom: 3rem; /* Espace entre le titre et la carte */
-  animation: fadeIn 1s ease-out;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0 1.5rem;
 }
 
 .main-title {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin: 0 0 10px 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  color: #a6adc8;
+  color: #94a3b8;
   margin: 0;
+  letter-spacing: 0.01em;
 }
 
-/* --- Design de la Carte --- */
+/* Map Design */
 #suisse {
-  max-width: 90%; /* Un peu plus grand */
+  max-width: 95%;
   width: 1000px;
   height: auto;
-  /* Ombre portée pour donner du volume à la carte entière */
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.5));
+  transition: transform 0.4s ease;
+  margin-bottom: 4rem;
+  flex-grow: 1;
 }
 
-/* Styles par défaut des cantons */
+/* Default Canton Styles */
 #suisse path {
-  stroke: #1e1e2e; /* Couleur du fond pour séparer les cantons proprement */
-  stroke-width: 2;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  stroke: #0f172a;
+  stroke-width: 1.5;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  transform-origin: center; /* Pour que le zoom se fasse depuis le centre du canton */
+  transform-origin: center;
 }
 
-/* Effet de survol (Hover) */
+/* Hover Effect */
 #suisse path:hover {
   opacity: 1;
-  stroke: #ffffff; /* Bordure blanche au survol */
-  stroke-width: 3px;
-  filter: brightness(1.2); /* Éclaircit la couleur */
-  transform: translateY(-5px) scale(1.02); /* Effet de lévitation */
-  z-index: 10; /* Tente de mettre le canton au dessus (fonctionne selon l'ordre SVG) */
+  stroke: #ffffff;
+  stroke-width: 2.5px;
+  filter: brightness(1.15) drop-shadow(0 0 10px rgba(255,255,255,0.3));
+  transform: translateY(-6px) scale(1.02);
+  z-index: 10;
 }
 
-/* --- Couleurs des Cantons (Palette Pastel Catppuccin) --- */
-/* Je garde vos IDs existants mais j'harmonise si besoin */
+/* Color Palette - Diverse but professional */
+#CH-AG, #CH-SO       { fill: #3b82f6; } /* Blue */
+#CH-AI, #CH-NW       { fill: #6366f1; } /* Indigo */
+#CH-AR, #CH-JU       { fill: #a78bfa; } /* Soft Violet */
+#CH-BE               { fill: #0ea5e9; } /* Sky */
+#CH-GR               { fill: #14b8a6; } /* Teal */
+#CH-ZH               { fill: #06b6d4; } /* Cyan */
+#CH-BL, #CH-UR       { fill: #4f46e5; } /* Deep Indigo */
+#CH-BS               { fill: #f97316; } /* Orange */
+#CH-VD               { fill: #2dd4bf; } /* Mint */
+#CH-FR, #CH-TG       { fill: #22d3ee; } /* Light Cyan */
+#CH-SG               { fill: #34d399; } /* Emerald */
+#CH-GE, #CH-SH       { fill: #38bdf8; } /* Light Sky */
+#CH-NE               { fill: #818cf8; } /* Light Indigo */
+#CH-LU, #CH-ZG       { fill: #60a5fa; } /* Light Blue */
+#CH-OW               { fill: #f472b6; } /* Pink */
+#CH-VS               { fill: #fb923c; } /* Light Orange */
+#CH-TI               { fill: #c084fc; } /* Purple */
+#CH-SZ               { fill: #e879f9; } /* Fuchsia */
+#CH-GL               { fill: #a3e635; } /* Lime */
+#IT                   { fill: #1e293b; } /* Slate - fades into bg */
 
-#CH-AG, #CH-GL, #CH-SO { fill: #a6e3a1; } /* Vert */
-#CH-AI, #CH-NW, #CH-TI { fill: #fab387; } /* Orange/Peche */
-#CH-AR, #CH-JU, #CH-SZ { fill: #f5c2e7; } /* Rose */
-#CH-BE, #CH-GR, #CH-ZH { fill: #89b4fa; } /* Bleu */
-#CH-BL, #CH-UR { fill: #cba6f7; } /* Mauve */
-#CH-BS, #CH-VD { fill: #b4befe; } /* Lavande */
-#CH-FR, #CH-SG, #CH-TG { fill: #94e2d5; } /* Menthe */
-#CH-GE, #CH-NE, #CH-SH { fill: #f9e2af; } /* Jaune */
-#CH-LU, #CH-ZG { fill: #89dceb; } /* Ciel */
-#CH-OW, #CH-VS { fill: #eba0ac; } /* Corail */
-#IT { fill: #313244; } /* Italie en gris foncé pour l'effacer ou #f38ba8 pour rouge */
-
-/* --- Animation d'apparition --- */
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
+  from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Responsive (Mobile) --- */
+/* Mobile Selector Container (hidden by default) */
+.mobile-canton-selector {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 1.5rem;
+  margin: 0 auto 2rem auto;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-canton-selector select {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--btn-bg);
+  color: var(--title);
+  border: 1px solid var(--btn-border);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  appearance: none;
+  outline: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8fafc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.mobile-canton-selector select option {
+  background: var(--btn-bg);
+  color: #fff;
+}
+
+.mobile-canton-selector button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-canton-selector button:active {
+  transform: scale(0.98);
+}
+
+.mobile-canton-selector button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .main-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .subtitle {
     font-size: 1rem;
   }
   #suisse {
-    max-width: 100%;
+    display: none; /* Hide map on mobile */
   }
+  .mobile-canton-selector {
+    display: flex; /* Show select on mobile */
+  }
+}
+
+/* Footer */
+.site-footer {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+.site-footer-copy {
+  color: var(--footer-text);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+.site-footer-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.site-footer-link:hover {
+  opacity: 0.8;
 }

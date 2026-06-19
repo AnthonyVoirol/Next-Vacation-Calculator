@@ -1,181 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Theme - Clean, Professional */
+  --bg: #f1f5f9;
+  --text: #334155;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --title: #0f172a;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --btn-bg: #ffffff;
+  --btn-bg-hover: #f8fafc;
+  --btn-text: #475569;
+  --btn-border: #e2e8f0;
+  --footer-border: #e2e8f0;
+  --footer-text: #94a3b8;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme - Sleek, Premium */
+  --bg: #0f172a;
+  --text: #cbd5e1;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --title: #f8fafc;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --btn-bg: #1e293b;
+  --btn-bg-hover: #334155;
+  --btn-text: #f1f5f9;
+  --btn-border: #334155;
+  --footer-border: #1e293b;
+  --footer-text: #64748b;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
   position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  padding: 2rem 1rem 0 1rem;
 }
 
-.returnMap {
-  position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-  background-color: #e9ecef;
-  color: #495057;
-  z-index: 10;
-}
-
-.returnMap:hover {
-  background-color: #dee2e6;
-}
-
-.download-button {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-  background-color: #3498db;
-  color: white;
-  z-index: 10;
-}
-
-.download-button:hover {
-  background-color: #2980b9;
-}
-
-.container {
+.top-bar {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 4rem;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #2c3e50;
+.top-bar > * {
+  pointer-events: auto;
 }
 
-.box {
-  background-color: white;
-  border-radius: 12px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-}
-
-#vacance {
-  font-size: 1.5rem;
+.returnMap,
+.theme-toggle {
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px; /* Pill shape */
+  text-decoration: none;
   font-weight: 500;
-  margin-bottom: 1rem;
-  color: #3498db;
-}
-
-#compteur {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2c3e50;
-}
-
-.footer {
-  margin-top: auto;
-  padding: 1rem;
-  text-align: center;
-  color: #6c757d;
   font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-  .returnMap,
-  .download-button {
-    top: 1rem;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  #vacance {
-    font-size: 1.3rem;
-  }
-
-  #compteur {
-    font-size: 1.6rem;
-  }
-
-  .box {
-    padding: 1.5rem;
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
+  transition: all 0.2s ease;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  position: relative;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .returnMap {
-  position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-  background-color: #e9ecef;
-  color: #495057;
-  z-index: 10;
+  gap: 0.5rem;
 }
 
-.returnMap:hover {
-  background-color: #dee2e6;
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
 }
 
-.download-button {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-  background-color: #3498db;
-  color: white;
-  z-index: 10;
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
 }
 
-.download-button:hover {
-  background-color: #2980b9;
+/* Icon visibility based on theme */
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+
+.returnMap:hover,
+.theme-toggle:hover {
+  background-color: var(--btn-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .container {
@@ -183,54 +129,85 @@ body {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding: 2rem;
-  margin-top: 4rem;
+  padding: 1rem;
+  margin-top: 6rem;
+  flex-grow: 1;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #2c3e50;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2.5rem;
+  color: var(--title);
 }
 
 .box {
-  background-color: white;
-  border-radius: 12px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 3.5rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2.5rem;
   position: relative;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .box:hover {
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
 }
 
 #vacance {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: #3498db;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
 }
 
 #compteur {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--title);
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
 }
 
 .fullscreen-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  color: #2c3e50;
+  color: var(--btn-text);
   z-index: 10;
-  transition: transform 0.3s ease;
+  transition: all 0.2s ease;
+}
+
+.fullscreen-button svg {
+  width: 16px;
+  height: 16px;
 }
 
 .fullscreen-button:hover {
-  transform: scale(1.2);
+  background-color: var(--btn-bg-hover);
+  color: var(--accent);
+  transform: scale(1.05);
 }
 
 .box.fullscreen-mode {
@@ -245,68 +222,213 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #ffffff;
+  color: #000000;
   max-width: none;
   margin: 0;
   padding: 0;
+  border: none;
+  backdrop-filter: none;
+}
+
+[data-theme="dark"] .box.fullscreen-mode {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .box.fullscreen-mode #vacance {
-  font-size: 100px;
-  color: white;
-  font-family: Impact, fantasy;
+  font-size: 3vw;
 }
 
 .box.fullscreen-mode #compteur {
-  font-size: 130px;
-  color: white;
-  font-family: Impact, fantasy;
+  font-size: 8vw;
 }
 
 .box.fullscreen-mode .fullscreen-button {
-  color: white;
-  top: 30px;
-  right: 30px;
-  font-size: 32px;
+  top: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
 }
 
-.footer {
-  margin-top: auto;
-  padding: 1rem;
+/* Actions (export, partage, rappel) */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.download-button {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.download-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* App-like Icon Buttons */
+.icon-button {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.icon-button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.3s;
+}
+
+.icon-button:hover {
+  background: var(--btn-bg-hover);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.icon-button.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.icon-button.active svg {
+  fill: currentColor;
+}
+
+/* Action Item Wrapper (icon + label) */
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--btn-text);
+  letter-spacing: 0.01em;
   text-align: center;
-  color: #6c757d;
+  user-select: none;
+}
+
+/* Download App button container styling */
+.app-download-container {
+  margin-top: 2rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(150%);
+  background-color: var(--title);
+  color: var(--bg);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
   font-size: 0.9rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2000;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Footer */
+.site-footer {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+.site-footer-copy {
+  color: var(--footer-text);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+.site-footer-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.site-footer-link:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
-  .returnMap,
-  .download-button {
-    top: 1rem;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+  .top-bar {
+    padding: 1rem;
   }
-
+  
   h1 {
     font-size: 2rem;
-  }
-
-  #vacance {
-    font-size: 1.3rem;
-  }
-
-  #compteur {
-    font-size: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .box {
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
-  .box.fullscreen-mode #vacance {
-    font-size: 50px;
+  #vacance {
+    font-size: 1rem;
   }
 
-  .box.fullscreen-mode #compteur {
-    font-size: 70px;
+  #compteur {
+    font-size: 1.75rem;
   }
+
+  .actions {
+    gap: 1.5rem;
+  }
+
+  .download-button {
+    width: 100%;
+  }
+  
+
 }
