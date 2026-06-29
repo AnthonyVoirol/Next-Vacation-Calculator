@@ -17,7 +17,7 @@ Une application web simple et élégante qui affiche un compte à rebours jusqu'
 
 ## Démonstration
 
-Visitez l'application en direct : [Ajoutez votre URL de déploiement ici]
+Visitez l'application en direct : Vacances.voirol.tech 
 
 ## Technologies Utilisées
 
